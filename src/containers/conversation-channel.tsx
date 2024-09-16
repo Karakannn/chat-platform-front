@@ -1,7 +1,9 @@
-import React from 'react'
+import { AuthContext } from "@/context/auth";
+import React, { useContext } from "react";
 
 export default function ConversationChannelContainer() {
-  return (
-    <div>ConversationChannelContainer</div>
-  )
+  const { user } = useContext(AuthContext);
+  console.log("user", user);
+  
+  return <div>{user && <div>{user?.email}</div>}</div>;
 }
